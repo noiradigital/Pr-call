@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appel Découverte — Noïra Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
+  <!-- Calendly widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:     #EBEBEA;
+      --bg2:    #E1DEDB;
+      --sep:    #C0BCB8;
+      --accent: #948F89;
+      --text2:  #646058;
+      --text:   #1C1A18;
+      --white:  #F3F1EF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      text-align: center;
+      padding: 64px 24px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .brand {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(32px, 6vw, 50px);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 15px;
+      color: var(--text2);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ─── BENEFITS ─── */
+    .benefits {
+      background: var(--bg2);
+      padding: 40px 24px;
+    }
+    .benefits-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .benefits-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .b-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--bg);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .b-icon svg { width: 18px; height: 18px; stroke: var(--accent); }
+    .b-text strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .b-text span { font-size: 13px; color: var(--text2); }
+
+    /* ─── DIVIDER ─── */
+    .divider { width: 36px; height: 1px; background: var(--accent); margin: 40px auto; }
+
+    /* ─── FORM SECTION ─── */
+    .form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .form-intro { margin-bottom: 36px; }
+    .form-intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+    .form-intro p { font-size: 14px; color: var(--text2); }
+
+    /* ─── STEP HEADER ─── */
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 32px 0 20px;
+      border-top: 1px solid var(--sep);
+      padding-top: 24px;
+    }
+    .step-num {
+      width: 26px; height: 26px;
+      background: var(--text);
+      color: var(--bg);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-title { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text2); }
+
+    /* ─── FIELDS ─── */
+    .field { margin-bottom: 22px; }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    label span { font-weight: 400; color: var(--text2); }
+
+    input[type=text], textarea, select {
+      width: 100%;
+      padding: 13px 16px;
+      background: var(--white);
+      border: 1.5px solid var(--sep);
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    input[type=text]:focus, textarea:focus, select:focus { border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 90px; }
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A49485' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:520px){ .two-col { grid-template-columns: 1fr; } }
+
+    /* ─── RADIO CARDS ─── */
+    .radio-cards { display: flex; flex-direction: column; gap: 10px; }
+    .radio-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--white);
+      border: 1.5px solid var(--sep);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .radio-card:hover { border-color: var(--accent); }
+    .radio-card.selected { border-color: var(--text); background: var(--bg2); }
+    .radio-card input[type=radio] { display: none; }
+    .radio-dot {
+      width: 18px; height: 18px;
+      border: 2px solid var(--sep);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+      transition: border-color 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .radio-card.selected .radio-dot { border-color: var(--text); }
+    .radio-dot-inner {
+      width: 8px; height: 8px;
+      background: var(--text);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .radio-card.selected .radio-dot-inner { opacity: 1; }
+    .radio-label strong { display: block; font-size: 14px; font-weight: 600; }
+    .radio-label span { font-size: 12px; color: var(--text2); }
+
+    /* ─── ENGAGEMENT BOX ─── */
+    .engagement-box {
+      background: var(--bg2);
+      border: 1.5px solid var(--sep);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 22px;
+    }
+    .engagement-box p {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    /* ─── SUBMIT ─── */
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--text);
+      color: var(--bg);
+      border: none;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+    }
+    .submit-btn:hover { background: #2a221e; }
+    .submit-btn:active { transform: scale(0.99); }
+    .submit-note {
+      font-size: 11px;
+      color: var(--text2);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    /* ─── RESULT SCREENS ─── */
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    /* disqualified */
+    .disq-screen {
+      max-width: 560px;
+      margin: 60px auto;
+      padding: 0 24px 80px;
+      text-align: center;
+    }
+    .disq-screen .icon { font-size: 40px; margin-bottom: 24px; }
+    .disq-screen h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .disq-screen p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 24px; }
+
+    /* calendly screen */
+    .cal-screen { padding: 0 24px 80px; }
+    .cal-intro {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 48px 0 32px;
+    }
+    .cal-intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+    .cal-intro p { font-size: 15px; color: var(--text2); margin-bottom: 32px; }
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 700px;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sep);
+      border-top: 1px solid var(--bg2);
+    }
+
+    /* ─── ERROR ─── */
+    .err { display: none; font-size: 12px; color: #c0392b; margin-top: 6px; }
+    .field-error input, .field-error textarea, .field-error select { border-color: #c0392b !important; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
+<section class="hero">
+  <div class="brand">Noïra Digital</div>
+  <h1>Avant de réserver ton appel,<br>dis-moi où tu en es.</h1>
+  <p>2 minutes. Pour que l'appel t'apporte vraiment quelque chose et qu'on en tire le maximum tous les deux.</p>
+</section>
+
+<!-- ══════════════════════════════ BENEFITS ══════════════════════════════════ -->
+<section class="benefits">
+  <div class="benefits-inner">
+    <p class="benefits-label">Ce que tu obtiens lors de cet appel</p>
+
+    <div class="benefit">
+      <div class="b-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+      </div>
+      <div class="b-text">
+        <strong>Un appel vidéo de 45 min</strong>
+        <span>Un échange en face à face pour comprendre ta situation réelle.</span>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="b-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <div class="b-text">
+        <strong>Une analyse honnête de ta situation</strong>
+        <span>On identifie ensemble ce qui te bloque vraiment, et ce qu'on peut faire concrètement pour en sortir.</span>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="b-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <div class="b-text">
+        <strong>Un plan d'action concret</strong>
+        <span>Tu repars avec les prochaines étapes claires. Pas de l'inspiration, du concret.</span>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="b-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="b-text">
+        <strong>Places limitées</strong>
+        <span>Je prends peu d'appels par semaine pour rester vraiment disponible.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════ FORM ══════════════════════════════════════ -->
+<div id="form-section" class="screen active">
+  <div class="form-wrap">
+    <div class="form-intro">
+      <h2>Quelques questions avant qu'on se parle.</h2>
+      <p>Réponds honnêtement. C'est ce qui me permet de t'apporter quelque chose de concret lors de l'appel.</p>
+    </div>
+
+    <form id="precall" novalidate>
+
+      <!-- STEP 1 : identité -->
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">Ton profil</div>
+      </div>
+
+      <div class="two-col">
+        <div class="field" id="f-prenom">
+          <label>Prénom *</label>
+          <input type="text" name="prenom" placeholder="Ex : Léa" />
+          <div class="err">Ce champ est requis.</div>
+        </div>
+        <div class="field" id="f-instagram">
+          <label>@Instagram *</label>
+          <input type="text" name="instagram" placeholder="@toncompte" />
+          <div class="err">Ce champ est requis.</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="field" id="f-activite">
+          <label>Ton activité *</label>
+          <select name="activite">
+            <option value="" disabled selected>Choisis</option>
+            <option>Étudiante</option>
+            <option>Employée</option>
+            <option>Étudiante qui travaille à côté</option>
+            <option>Sans emploi</option>
+            <option>Entrepreneure</option>
+          </select>
+          <div class="err">Ce champ est requis.</div>
+        </div>
+        <div class="field" id="f-revenus">
+          <label>Tes revenus actuels *</label>
+          <select name="revenus">
+            <option value="" disabled selected>Choisis</option>
+            <option>Pas de revenus stables</option>
+            <option>Moins de 1 500 €/mois</option>
+            <option>Plus de 1 500 €/mois</option>
+          </select>
+          <div class="err">Ce champ est requis.</div>
+        </div>
+      </div>
+
+      <!-- STEP 2 : contexte -->
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">Ta situation</div>
+      </div>
+
+      <div class="field" id="f-blocage">
+        <label>Ton plus gros blocage qui t'empêche de te lancer ? *</label>
+        <textarea name="blocage" placeholder="Ex : je sais pas par où commencer, j'ai peur de me tromper..."></textarea>
+        <div class="err">Ce champ est requis.</div>
+      </div>
+
+      <div class="field" id="f-essaye">
+        <label>Ce que tu as déjà essayé pour générer des revenus en ligne *</label>
+        <textarea name="essaye" placeholder="Ex : j'ai regardé des formations, tenté du dropshipping..."></textarea>
+        <div class="err">Ce champ est requis.</div>
+      </div>
+
+      <div class="two-col">
+        <div class="field" id="f-objectif">
+          <label>Objectif CA mensuel <span>(prochains mois)</span> *</label>
+          <input type="text" name="objectif" placeholder="Ex : 500 €, 1 000 €..." />
+          <div class="err">Ce champ est requis.</div>
+        </div>
+        <div class="field" id="f-video">
+          <label>Quelle vidéo t'a poussée à passer à l'action ? *</label>
+          <input type="text" name="video" placeholder="Ex : le reel sur le conditionnement..." />
+          <div class="err">Ce champ est requis.</div>
+        </div>
+      </div>
+
+      <div class="field" id="f-pourquoi">
+        <label>Pourquoi maintenant et pas dans 6 mois ? *</label>
+        <textarea name="pourquoi" placeholder="Ex : j'en peux plus de dépendre de mes parents, de mon patron..."></textarea>
+        <div class="err">Ce champ est requis.</div>
+      </div>
+
+      <!-- STEP 3 : engagement -->
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">Ton engagement</div>
+      </div>
+
+      <div class="engagement-box">
+        <p>Mon temps est précieux. En sélectionnant <strong>Oui</strong>, tu t'engages à être à l'heure le jour de l'appel. Si tu n'es pas là, tu ne pourras plus jamais réserver d'appel.</p>
+
+        <div class="radio-cards" id="engagement-cards">
+          <label class="radio-card" onclick="selectRadio(this,'oui')">
+            <input type="radio" name="engagement" value="oui" />
+            <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+            <div class="radio-label">
+              <strong>Oui, je confirme. Je serai présente et à l'heure.</strong>
+              <span>J'ai conscience que mon temps et celui de Noïra sont précieux.</span>
+            </div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'non')">
+            <input type="radio" name="engagement" value="non" />
+            <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+            <div class="radio-label">
+              <strong>Non, je ne peux pas garantir ma présence</strong>
+              <span>Je reviendrai quand je serai vraiment disponible.</span>
+            </div>
+          </label>
+        </div>
+        <div class="err" id="engagement-err" style="margin-top:8px;">Merci de choisir une option.</div>
+      </div>
+
+      <button type="submit" class="submit-btn">Je veux ma première vente. C'est parti →</button>
+      <p class="submit-note">Tes réponses sont confidentielles et ne servent qu'à préparer notre échange.</p>
+
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ DISQUALIFIED ═══════════════════════════════ -->
+<div id="disq-section" class="screen">
+  <div class="disq-screen">
+    <div class="icon">🤍</div>
+    <h2>Ce n'est pas encore le bon moment.</h2>
+    <p>
+      Je t'entends et je respecte ta franchise.<br><br>
+      Pour que cet appel t'apporte vraiment quelque chose, il faut qu'on puisse se retrouver dans les meilleures conditions possible.<br><br>
+      Continue à suivre mon contenu. Quand tu seras prête, tu sauras.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ CALENDLY ═══════════════════════════════════ -->
+<div id="cal-section" class="screen">
+  <div class="cal-intro">
+    <h2>C'est parti. Choisis ton créneau.</h2>
+    <p>Tes réponses ont bien été reçues. Réserve maintenant ton créneau ci-dessous et confirme ensuite dans ta boîte mail.</p>
+  </div>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/noira-community1/30min?hide_gdpr_banner=1&primary_color=a49485" style="min-width:320px;height:700px;"></div>
+</div>
+
+<footer>Noïra Digital</footer>
+
+<!-- ══════════════════════════════ SCRIPTS ════════════════════════════════════ -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+
+  /* ── Radio cards ── */
+  function selectRadio(card, val) {
+    document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    card.querySelector('input[type=radio]').checked = true;
+  }
+
+  /* ── Validation helpers ── */
+  function req(id, selector) {
+    const wrap = document.getElementById(id);
+    const el   = wrap.querySelector(selector);
+    const ok   = el.value.trim() !== '';
+    wrap.classList.toggle('field-error', !ok);
+    wrap.querySelector('.err').style.display = ok ? 'none' : 'block';
+    return ok;
+  }
+
+  /* ── Submit ── */
+  document.getElementById('precall').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    /* Validate all fields */
+    const v = [
+      req('f-prenom',    'input'),
+      req('f-instagram', 'input'),
+      req('f-activite',  'select'),
+      req('f-revenus',   'select'),
+      req('f-blocage',   'textarea'),
+      req('f-essaye',    'textarea'),
+      req('f-objectif',  'input'),
+      req('f-video',     'input'),
+      req('f-pourquoi',  'textarea'),
+    ];
+
+    const engVal = document.querySelector('input[name=engagement]:checked');
+    const engErr = document.getElementById('engagement-err');
+    if (!engVal) { engErr.style.display = 'block'; v.push(false); }
+    else          { engErr.style.display = 'none'; }
+
+    if (v.includes(false)) {
+      document.querySelector('.field-error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    /* Collect data */
+    const data = {
+      prenom:    document.querySelector('[name=prenom]').value.trim(),
+      instagram: document.querySelector('[name=instagram]').value.trim(),
+      activite:  document.querySelector('[name=activite]').value,
+      revenus:   document.querySelector('[name=revenus]').value,
+      blocage:   document.querySelector('[name=blocage]').value.trim(),
+      essaye:    document.querySelector('[name=essaye]').value.trim(),
+      objectif:  document.querySelector('[name=objectif]').value.trim(),
+      video:     document.querySelector('[name=video]').value.trim(),
+      pourquoi:  document.querySelector('[name=pourquoi]').value.trim(),
+      engagement: engVal.value,
+      date:      new Date().toLocaleString('fr-FR'),
+    };
+
+    /* Send to Google Sheets via Apps Script */
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+    } catch(err) {
+      /* silent fail — still redirect */
+    }
+
+    /* Hide form */
+    document.getElementById('form-section').classList.remove('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    /* Route */
+    if (data.engagement === 'non') {
+      document.getElementById('disq-section').classList.add('active');
+    } else {
+      document.getElementById('cal-section').classList.add('active');
+    }
+  });
+
+  /*
+  ═══════════════════════════════════════════════════════════════
+  GOOGLE SHEETS — remplace la ligne ci-dessous par ton URL Apps Script
+  (voir le fichier google-apps-script.js pour les instructions)
+  ═══════════════════════════════════════════════════════════════
+  */
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJKwAVgh2-rLv0WdAGhauqZ63tyN1OE76wz91fs2WskzTAE953XFzjgZgJxRUrXugx/exec';
+
+</script>
+</body>
+</html>
