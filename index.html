@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Appel Découverte — Noïra Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
-  <!-- Calendly widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <style>
     :root {
@@ -16,132 +15,110 @@
       --text2:  #646058;
       --text:   #1C1A18;
       --white:  #F3F1EF;
+      --dark:   #171513;
+      --cream:  #EDE8DF;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
-    }
-
-    /* ─── HERO ─── */
+    /* ─── HERO (dark comme Pulse) ─── */
     .hero {
+      background: var(--dark);
       text-align: center;
-      padding: 64px 24px 40px;
-      max-width: 680px;
-      margin: 0 auto;
+      padding: 56px 24px 48px;
     }
     .brand {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: clamp(32px, 6vw, 50px);
-      font-weight: 400;
+      font-size: clamp(34px, 6vw, 52px);
+      font-weight: 500;
       line-height: 1.15;
+      color: var(--cream);
       margin-bottom: 16px;
     }
     .hero p {
-      font-size: 15px;
-      color: var(--text2);
-      max-width: 500px;
+      font-size: 14px;
+      color: var(--accent);
+      max-width: 480px;
       margin: 0 auto;
     }
 
-    /* ─── BENEFITS ─── */
+    /* ─── BENEFITS (dark comme Digitalflooz) ─── */
     .benefits {
-      background: var(--bg2);
+      background: #1a1816;
       padding: 40px 24px;
     }
-    .benefits-inner {
-      max-width: 680px;
-      margin: 0 auto;
-    }
+    .benefits-inner { max-width: 680px; margin: 0 auto; }
     .benefits-label {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .benefit {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 18px;
+      gap: 14px;
+      background: #222019;
+      border: 1px solid #2e2b28;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 10px;
     }
     .b-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--bg);
+      width: 40px; height: 40px;
+      background: #2e2d2b;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .b-icon svg { width: 18px; height: 18px; stroke: var(--accent); }
-    .b-text strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
-    .b-text span { font-size: 13px; color: var(--text2); }
+    .b-icon svg { width: 18px; height: 18px; stroke: #a8aead; }
+    .b-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 2px; }
+    .b-text span { font-size: 13px; color: #7a756e; }
 
     /* ─── DIVIDER ─── */
-    .divider { width: 36px; height: 1px; background: var(--accent); margin: 40px auto; }
+    .divider { width: 36px; height: 1px; background: var(--sep); margin: 40px auto; }
 
-    /* ─── FORM SECTION ─── */
-    .form-wrap {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
+    /* ─── FORM ─── */
+    .form-wrap { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
     .form-intro { margin-bottom: 36px; }
     .form-intro h2 {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 8px;
     }
     .form-intro p { font-size: 14px; color: var(--text2); }
 
-    /* ─── STEP HEADER ─── */
+    /* step header */
     .step-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: flex; align-items: center; gap: 10px;
       margin: 32px 0 20px;
       border-top: 1px solid var(--sep);
       padding-top: 24px;
     }
     .step-num {
       width: 26px; height: 26px;
-      background: var(--text);
-      color: var(--bg);
-      border-radius: 50%;
-      font-size: 11px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      background: var(--text); color: var(--bg);
+      border-radius: 50%; font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .step-title { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text2); }
+    .step-title { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text2); }
 
-    /* ─── FIELDS ─── */
-    .field { margin-bottom: 22px; }
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
+    /* fields */
+    .field { margin-bottom: 20px; }
+    label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
     label span { font-weight: 400; color: var(--text2); }
 
     input[type=text], textarea, select {
@@ -158,10 +135,10 @@
       -webkit-appearance: none;
       appearance: none;
     }
-    input[type=text]:focus, textarea:focus, select:focus { border-color: var(--accent); }
+    input[type=text]:focus, textarea:focus, select:focus { border-color: var(--text); }
     textarea { resize: vertical; min-height: 90px; }
     select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A49485' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23948F89' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 14px center;
       padding-right: 40px;
@@ -170,12 +147,10 @@
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media(max-width:520px){ .two-col { grid-template-columns: 1fr; } }
 
-    /* ─── RADIO CARDS ─── */
+    /* radio cards */
     .radio-cards { display: flex; flex-direction: column; gap: 10px; }
     .radio-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+      display: flex; align-items: flex-start; gap: 12px;
       padding: 14px 16px;
       background: var(--white);
       border: 1.5px solid var(--sep);
@@ -183,31 +158,24 @@
       cursor: pointer;
       transition: border-color 0.2s, background 0.2s;
     }
-    .radio-card:hover { border-color: var(--accent); }
+    .radio-card:hover { border-color: var(--text); }
     .radio-card.selected { border-color: var(--text); background: var(--bg2); }
     .radio-card input[type=radio] { display: none; }
     .radio-dot {
       width: 18px; height: 18px;
       border: 2px solid var(--sep);
       border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 1px;
-      transition: border-color 0.2s;
+      flex-shrink: 0; margin-top: 1px;
       display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s;
     }
     .radio-card.selected .radio-dot { border-color: var(--text); }
-    .radio-dot-inner {
-      width: 8px; height: 8px;
-      background: var(--text);
-      border-radius: 50%;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
+    .radio-dot-inner { width: 8px; height: 8px; background: var(--text); border-radius: 50%; opacity: 0; transition: opacity 0.2s; }
     .radio-card.selected .radio-dot-inner { opacity: 1; }
     .radio-label strong { display: block; font-size: 14px; font-weight: 600; }
     .radio-label span { font-size: 12px; color: var(--text2); }
 
-    /* ─── ENGAGEMENT BOX ─── */
+    /* engagement box */
     .engagement-box {
       background: var(--bg2);
       border: 1.5px solid var(--sep);
@@ -215,113 +183,76 @@
       padding: 20px;
       margin-bottom: 22px;
     }
-    .engagement-box p {
-      font-size: 13px;
-      color: var(--text);
-      line-height: 1.6;
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
+    .engagement-box p { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; font-weight: 500; }
 
-    /* ─── SUBMIT ─── */
+    /* submit */
     .submit-btn {
       width: 100%;
       padding: 16px;
-      background: var(--text);
-      color: var(--bg);
-      border: none;
-      border-radius: 10px;
+      background: var(--text); color: var(--bg);
+      border: none; border-radius: 10px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
       cursor: pointer;
       transition: background 0.2s, transform 0.1s;
       margin-top: 8px;
     }
-    .submit-btn:hover { background: #2a221e; }
+    .submit-btn:hover { background: #333; }
     .submit-btn:active { transform: scale(0.99); }
-    .submit-note {
-      font-size: 11px;
-      color: var(--text2);
-      text-align: center;
-      margin-top: 14px;
-      line-height: 1.5;
-    }
+    .submit-note { font-size: 11px; color: var(--text2); text-align: center; margin-top: 14px; line-height: 1.5; }
 
-    /* ─── RESULT SCREENS ─── */
+    /* screens */
     .screen { display: none; }
     .screen.active { display: block; }
+    .hideable { }
+    .hideable.hidden { display: none !important; }
 
-    /* disqualified */
-    .disq-screen {
-      max-width: 560px;
-      margin: 60px auto;
-      padding: 0 24px 80px;
-      text-align: center;
-    }
+    /* disq */
+    .disq-screen { max-width: 560px; margin: 60px auto; padding: 0 24px 80px; text-align: center; }
     .disq-screen .icon { font-size: 40px; margin-bottom: 24px; }
     .disq-screen h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 28px;
-      margin-bottom: 16px;
+      font-style: italic; font-size: 28px; margin-bottom: 16px;
     }
-    .disq-screen p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 24px; }
+    .disq-screen p { font-size: 15px; color: var(--text2); line-height: 1.8; }
 
-    /* calendly screen */
-    .cal-screen { padding: 0 24px 80px; }
-    .cal-intro {
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 48px 0 32px;
+    /* calendly */
+    .cal-screen { padding: 24px 24px 80px; }
+    .cal-label {
+      max-width: 680px; margin: 0 auto 20px;
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent);
     }
-    .cal-intro h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-    .cal-intro p { font-size: 15px; color: var(--text2); margin-bottom: 32px; }
     .calendly-inline-widget {
-      min-width: 320px;
-      height: 700px;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 16px;
-      overflow: hidden;
+      min-width: 320px; height: 700px;
+      max-width: 900px; margin: 0 auto;
+      border-radius: 16px; overflow: hidden;
     }
 
-    /* ─── FOOTER ─── */
+    /* footer */
     footer {
-      text-align: center;
-      padding: 32px 24px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--sep);
-      border-top: 1px solid var(--bg2);
+      text-align: center; padding: 28px 24px;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--sep); border-top: 1px solid var(--bg2);
     }
 
-    /* ─── ERROR ─── */
-    .err { display: none; font-size: 12px; color: #c0392b; margin-top: 6px; }
-    .field-error input, .field-error textarea, .field-error select { border-color: #c0392b !important; }
+    /* errors */
+    .err { display: none; font-size: 12px; color: #b94040; margin-top: 6px; }
+    .field-error input, .field-error textarea, .field-error select { border-color: #b94040 !important; }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
-<section class="hero">
+<!-- HERO -->
+<section class="hero hideable">
   <div class="brand">Noïra Digital</div>
   <h1>Avant de réserver ton appel,<br>dis-moi où tu en es.</h1>
   <p>2 minutes. Pour que l'appel t'apporte vraiment quelque chose et qu'on en tire le maximum tous les deux.</p>
 </section>
 
-<!-- ══════════════════════════════ BENEFITS ══════════════════════════════════ -->
-<section class="benefits">
+<!-- BENEFITS -->
+<section class="benefits hideable">
   <div class="benefits-inner">
     <p class="benefits-label">Ce que tu obtiens lors de cet appel</p>
 
@@ -375,9 +306,9 @@
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="divider hideable"></div>
 
-<!-- ══════════════════════════════ FORM ══════════════════════════════════════ -->
+<!-- FORM -->
 <div id="form-section" class="screen active">
   <div class="form-wrap">
     <div class="form-intro">
@@ -387,7 +318,7 @@
 
     <form id="precall" novalidate>
 
-      <!-- STEP 1 : identité -->
+      <!-- STEP 1 -->
       <div class="step-header">
         <div class="step-num">1</div>
         <div class="step-title">Ton profil</div>
@@ -406,32 +337,38 @@
         </div>
       </div>
 
-      <div class="two-col">
-        <div class="field" id="f-activite">
-          <label>Ton activité *</label>
-          <select name="activite">
-            <option value="" disabled selected>Choisis</option>
-            <option>Étudiante</option>
-            <option>Employée</option>
-            <option>Étudiante qui travaille à côté</option>
-            <option>Sans emploi</option>
-            <option>Entrepreneure</option>
-          </select>
-          <div class="err">Ce champ est requis.</div>
-        </div>
-        <div class="field" id="f-revenus">
-          <label>Tes revenus actuels *</label>
-          <select name="revenus">
-            <option value="" disabled selected>Choisis</option>
-            <option>Pas de revenus stables</option>
-            <option>Moins de 1 500 €/mois</option>
-            <option>Plus de 1 500 €/mois</option>
-          </select>
-          <div class="err">Ce champ est requis.</div>
-        </div>
+      <div class="field" id="f-activite">
+        <label>Ton activité *</label>
+        <select name="activite">
+          <option value="" disabled selected>Choisis</option>
+          <option>Étudiant(e)</option>
+          <option>Employé(e)</option>
+          <option>Étudiant(e) qui travaille à côté</option>
+          <option>Sans emploi</option>
+          <option>Entrepreneur(e)</option>
+        </select>
+        <div class="err">Ce champ est requis.</div>
       </div>
 
-      <!-- STEP 2 : contexte -->
+      <div class="field" id="f-revenus">
+        <label>Tes revenus actuels *</label>
+        <select name="revenus">
+          <option value="" disabled selected>Choisis</option>
+          <option>Pas de revenus stables</option>
+          <option>Moins de 500 €/mois</option>
+          <option>500 € - 1 500 €/mois</option>
+          <option>Plus de 1 500 €/mois</option>
+        </select>
+        <div class="err">Ce champ est requis.</div>
+      </div>
+
+      <div class="field" id="f-objectif">
+        <label>Ce que tu veux générer comme CA dans les prochains mois *</label>
+        <input type="text" name="objectif" placeholder="Ex : 500 €, 1 000 €/mois..." />
+        <div class="err">Ce champ est requis.</div>
+      </div>
+
+      <!-- STEP 2 -->
       <div class="step-header">
         <div class="step-num">2</div>
         <div class="step-title">Ta situation</div>
@@ -449,17 +386,10 @@
         <div class="err">Ce champ est requis.</div>
       </div>
 
-      <div class="two-col">
-        <div class="field" id="f-objectif">
-          <label>Objectif CA mensuel <span>(prochains mois)</span> *</label>
-          <input type="text" name="objectif" placeholder="Ex : 500 €, 1 000 €..." />
-          <div class="err">Ce champ est requis.</div>
-        </div>
-        <div class="field" id="f-video">
-          <label>Quelle vidéo t'a poussée à passer à l'action ? *</label>
-          <input type="text" name="video" placeholder="Ex : le reel sur le conditionnement..." />
-          <div class="err">Ce champ est requis.</div>
-        </div>
+      <div class="field" id="f-video">
+        <label>Quelle vidéo t'a poussé(e) à passer à l'action ? *</label>
+        <input type="text" name="video" placeholder="Ex : le reel sur le conditionnement..." />
+        <div class="err">Ce champ est requis.</div>
       </div>
 
       <div class="field" id="f-pourquoi">
@@ -468,7 +398,7 @@
         <div class="err">Ce champ est requis.</div>
       </div>
 
-      <!-- STEP 3 : engagement -->
+      <!-- STEP 3 -->
       <div class="step-header">
         <div class="step-num">3</div>
         <div class="step-title">Ton engagement</div>
@@ -482,7 +412,7 @@
             <input type="radio" name="engagement" value="oui" />
             <div class="radio-dot"><div class="radio-dot-inner"></div></div>
             <div class="radio-label">
-              <strong>Oui, je confirme. Je serai présente et à l'heure.</strong>
+              <strong>Oui, je confirme. Je serai présent(e) et à l'heure.</strong>
               <span>J'ai conscience que mon temps et celui de Noïra sont précieux.</span>
             </div>
           </label>
@@ -498,14 +428,14 @@
         <div class="err" id="engagement-err" style="margin-top:8px;">Merci de choisir une option.</div>
       </div>
 
-      <button type="submit" class="submit-btn">Je veux ma première vente. C'est parti →</button>
+      <button type="submit" class="submit-btn">Let's go →</button>
       <p class="submit-note">Tes réponses sont confidentielles et ne servent qu'à préparer notre échange.</p>
 
     </form>
   </div>
 </div>
 
-<!-- ══════════════════════════════ DISQUALIFIED ═══════════════════════════════ -->
+<!-- DISQUALIFIED -->
 <div id="disq-section" class="screen">
   <div class="disq-screen">
     <div class="icon">🤍</div>
@@ -513,34 +443,30 @@
     <p>
       Je t'entends et je respecte ta franchise.<br><br>
       Pour que cet appel t'apporte vraiment quelque chose, il faut qu'on puisse se retrouver dans les meilleures conditions possible.<br><br>
-      Continue à suivre mon contenu. Quand tu seras prête, tu sauras.
+      Continue à suivre mon contenu. Quand tu seras prêt(e), tu sauras.
     </p>
   </div>
 </div>
 
-<!-- ══════════════════════════════ CALENDLY ═══════════════════════════════════ -->
+<!-- CALENDLY -->
 <div id="cal-section" class="screen">
-  <div class="cal-intro">
-    <h2>C'est parti. Choisis ton créneau.</h2>
-    <p>Tes réponses ont bien été reçues. Réserve maintenant ton créneau ci-dessous et confirme ensuite dans ta boîte mail.</p>
+  <div class="cal-screen">
+    <p class="cal-label">Choisis ton créneau</p>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/noira-community1/30min?hide_gdpr_banner=1&primary_color=948f89" style="min-width:320px;height:700px;"></div>
   </div>
-  <div class="calendly-inline-widget" data-url="https://calendly.com/noira-community1/30min?hide_gdpr_banner=1&primary_color=a49485" style="min-width:320px;height:700px;"></div>
 </div>
 
 <footer>Noïra Digital</footer>
 
-<!-- ══════════════════════════════ SCRIPTS ════════════════════════════════════ -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
 
-  /* ── Radio cards ── */
   function selectRadio(card, val) {
     document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
     card.classList.add('selected');
     card.querySelector('input[type=radio]').checked = true;
   }
 
-  /* ── Validation helpers ── */
   function req(id, selector) {
     const wrap = document.getElementById(id);
     const el   = wrap.querySelector(selector);
@@ -550,19 +476,21 @@
     return ok;
   }
 
-  /* ── Submit ── */
+  function hidePageChrome() {
+    document.querySelectorAll('.hideable').forEach(el => el.classList.add('hidden'));
+  }
+
   document.getElementById('precall').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    /* Validate all fields */
     const v = [
       req('f-prenom',    'input'),
       req('f-instagram', 'input'),
       req('f-activite',  'select'),
       req('f-revenus',   'select'),
+      req('f-objectif',  'input'),
       req('f-blocage',   'textarea'),
       req('f-essaye',    'textarea'),
-      req('f-objectif',  'input'),
       req('f-video',     'input'),
       req('f-pourquoi',  'textarea'),
     ];
@@ -577,22 +505,20 @@
       return;
     }
 
-    /* Collect data */
     const data = {
-      prenom:    document.querySelector('[name=prenom]').value.trim(),
-      instagram: document.querySelector('[name=instagram]').value.trim(),
-      activite:  document.querySelector('[name=activite]').value,
-      revenus:   document.querySelector('[name=revenus]').value,
-      blocage:   document.querySelector('[name=blocage]').value.trim(),
-      essaye:    document.querySelector('[name=essaye]').value.trim(),
-      objectif:  document.querySelector('[name=objectif]').value.trim(),
-      video:     document.querySelector('[name=video]').value.trim(),
-      pourquoi:  document.querySelector('[name=pourquoi]').value.trim(),
+      prenom:     document.querySelector('[name=prenom]').value.trim(),
+      instagram:  document.querySelector('[name=instagram]').value.trim(),
+      activite:   document.querySelector('[name=activite]').value,
+      revenus:    document.querySelector('[name=revenus]').value,
+      objectif:   document.querySelector('[name=objectif]').value.trim(),
+      blocage:    document.querySelector('[name=blocage]').value.trim(),
+      essaye:     document.querySelector('[name=essaye]').value.trim(),
+      video:      document.querySelector('[name=video]').value.trim(),
+      pourquoi:   document.querySelector('[name=pourquoi]').value.trim(),
       engagement: engVal.value,
-      date:      new Date().toLocaleString('fr-FR'),
+      date:       new Date().toLocaleString('fr-FR'),
     };
 
-    /* Send to Google Sheets via Apps Script */
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -600,28 +526,21 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-    } catch(err) {
-      /* silent fail — still redirect */
-    }
+    } catch(err) { /* silent fail */ }
 
-    /* Hide form */
+    // Hide everything
+    hidePageChrome();
     document.getElementById('form-section').classList.remove('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    /* Route */
     if (data.engagement === 'non') {
       document.getElementById('disq-section').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       document.getElementById('cal-section').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
 
-  /*
-  ═══════════════════════════════════════════════════════════════
-  GOOGLE SHEETS — remplace la ligne ci-dessous par ton URL Apps Script
-  (voir le fichier google-apps-script.js pour les instructions)
-  ═══════════════════════════════════════════════════════════════
-  */
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJKwAVgh2-rLv0WdAGhauqZ63tyN1OE76wz91fs2WskzTAE953XFzjgZgJxRUrXugx/exec';
 
 </script>
