@@ -741,6 +741,17 @@
 
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwcaOqXdI80mN3s3xTwOkgSxUP6vEoCXPWPLUTzd0OgSaYunCzw41D9c-Ha2AEvWrQ-/exec';
 
+  // Affiche directement les témoignages si on arrive via #temoignages
+  if (window.location.hash === '#temoignages') {
+    hidePageChrome();
+    document.getElementById('form-section').classList.remove('active');
+    document.getElementById('confirm-section').classList.add('active');
+    setTimeout(() => {
+      const t = document.getElementById('temoignages');
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
   // Détecte la réservation Calendly → affiche la confirmation
   window.addEventListener('message', function(e) {
     if (e.data && e.data.event === 'calendly.event_scheduled') {
