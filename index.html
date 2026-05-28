@@ -249,35 +249,37 @@
       font-size: clamp(34px, 6vw, 52px); font-weight: 500;
       color: var(--cream); line-height: 1.15; margin-bottom: 16px;
     }
-    .confirm-hero p { font-size: 12px; color: #5a5550; line-height: 1.8; max-width: 360px; margin: 0 auto; }
-    .confirm-hero p strong { color: #7a7570; }
+    .confirm-hero p { font-size: 14px; color: #5a5550; line-height: 1.8; max-width: 400px; margin: 0 auto 10px; }
+    .absence-warning {
+      font-size: 13px; font-weight: 600; color: #b94040;
+      max-width: 400px; margin: 0 auto; line-height: 1.7;
+    }
 
     .c-etape { padding: 56px 28px; border-bottom: 1px solid #1e1c1a; }
     .c-inner { max-width: 600px; margin: 0 auto; }
-    .c-step-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .c-step-header { display: flex; align-items: center; gap: 20px; margin-bottom: 16px; }
     .c-circle {
-      width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #3a3733;
+      width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #3a3733;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .c-circle span {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 22px; font-weight: 500; color: var(--cream); line-height: 1;
+      font-size: 24px; font-weight: 500; color: var(--cream); line-height: 1;
     }
-    .c-line { flex: 1; height: 1px; background: #222019; }
-    .c-tag { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3733; }
+    .c-step-header h3 { margin-bottom: 0; flex: 1; }
     .c-etape h3 {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: clamp(24px, 4vw, 34px); font-weight: 500;
+      font-size: clamp(22px, 3.5vw, 30px); font-weight: 500;
       color: var(--cream); line-height: 1.2; margin-bottom: 12px;
     }
-    .c-note { font-size: 12px; color: #4a4742; line-height: 1.8; }
-    .c-note strong { color: #6a6560; }
+    .c-note { font-size: 14px; color: #6a6560; line-height: 1.8; }
+    .c-note strong { color: #8a8580; }
 
     .cadeau-card {
       margin-top: 24px; background: #1e1c1a; border: 1px solid #2a2724;
       border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px;
     }
-    .cadeau-tag { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+    .cadeau-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
     .cadeau-card h4 {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
       font-size: 19px; font-weight: 500; color: var(--cream); line-height: 1.35;
@@ -304,11 +306,11 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 13px; font-weight: 700; color: var(--accent); flex-shrink: 0;
     }
-    .t-name { font-size: 12px; font-weight: 700; color: var(--cream); line-height: 1.2; }
-    .t-desc { font-size: 10px; color: #4a4742; }
-    .t-result { font-size: 14px; font-weight: 700; color: var(--cream); line-height: 1.3; }
+    .t-name { font-size: 13px; font-weight: 700; color: var(--cream); line-height: 1.2; }
+    .t-desc { font-size: 11px; color: #5a5550; }
+    .t-result { font-size: 15px; font-weight: 700; color: var(--cream); line-height: 1.3; }
     .t-quote {
-      font-size: 12px; color: #5a5550; line-height: 1.75; font-style: italic;
+      font-size: 13px; color: #6a6560; line-height: 1.75; font-style: italic;
       display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
     }
 
@@ -533,7 +535,8 @@
 
   <div class="confirm-hero">
     <h2>Ton appel est réservé.</h2>
-    <p>Complète les 3 étapes ci-dessous avant notre échange. <strong>Toute absence non justifiée ferme définitivement l'accès aux appels.</strong></p>
+    <p>Complète les 3 étapes ci-dessous avant notre échange.</p>
+    <p class="absence-warning">Toute absence non justifiée ferme définitivement l'accès aux appels.</p>
   </div>
 
   <!-- ÉTAPE 1 -->
@@ -541,10 +544,8 @@
     <div class="c-inner">
       <div class="c-step-header">
         <div class="c-circle"><span>1</span></div>
-        <div class="c-line"></div>
-        <span class="c-tag">À faire maintenant</span>
+        <h3>Enregistre l'appel dans ton agenda.</h3>
       </div>
-      <h3>Enregistre l'appel dans ton agenda.</h3>
       <p class="c-note">Ouvre l'e-mail de confirmation Calendly et clique sur <strong>Ajouter à l'agenda.</strong></p>
     </div>
   </div>
@@ -554,10 +555,8 @@
     <div class="c-inner">
       <div class="c-step-header">
         <div class="c-circle"><span>2</span></div>
-        <div class="c-line"></div>
-        <span class="c-tag">En attendant l'appel</span>
+        <h3>Ton cadeau.</h3>
       </div>
-      <h3>Ton cadeau.</h3>
       <div class="cadeau-card">
         <span class="cadeau-tag">100 % gratuit</span>
         <h4>Pourquoi t'es encore à zéro, alors que tu sais que c'est possible.</h4>
@@ -574,10 +573,8 @@
     <div class="c-inner">
       <div class="c-step-header">
         <div class="c-circle"><span>3</span></div>
-        <div class="c-line"></div>
-        <span class="c-tag">Ils sont passés à l'action</span>
+        <h3>Les résultats parlent d'eux-mêmes.</h3>
       </div>
-      <h3>Les résultats parlent d'eux-mêmes.</h3>
       <div class="t-grid">
 
         <div class="t-card">
