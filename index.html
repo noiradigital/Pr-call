@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Appel Découverte — Noïra Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
@@ -240,6 +240,77 @@
     /* errors */
     .err { display: none; font-size: 12px; color: #b94040; margin-top: 6px; }
     .field-error input, .field-error textarea, .field-error select { border-color: #b94040 !important; }
+
+    /* ── CONFIRMATION ── */
+    .confirm-section { background: var(--dark); }
+    .confirm-hero { text-align: center; padding: 80px 28px 64px; border-bottom: 1px solid #1e1c1a; }
+    .confirm-hero h2 {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(34px, 6vw, 52px); font-weight: 500;
+      color: var(--cream); line-height: 1.15; margin-bottom: 16px;
+    }
+    .confirm-hero p { font-size: 12px; color: #5a5550; line-height: 1.8; max-width: 360px; margin: 0 auto; }
+    .confirm-hero p strong { color: #7a7570; }
+
+    .c-etape { padding: 56px 28px; border-bottom: 1px solid #1e1c1a; }
+    .c-inner { max-width: 600px; margin: 0 auto; }
+    .c-step-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .c-circle {
+      width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #3a3733;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .c-circle span {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 22px; font-weight: 500; color: var(--cream); line-height: 1;
+    }
+    .c-line { flex: 1; height: 1px; background: #222019; }
+    .c-tag { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3733; }
+    .c-etape h3 {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(24px, 4vw, 34px); font-weight: 500;
+      color: var(--cream); line-height: 1.2; margin-bottom: 12px;
+    }
+    .c-note { font-size: 12px; color: #4a4742; line-height: 1.8; }
+    .c-note strong { color: #6a6560; }
+
+    .cadeau-card {
+      margin-top: 24px; background: #1e1c1a; border: 1px solid #2a2724;
+      border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .cadeau-tag { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+    .cadeau-card h4 {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 19px; font-weight: 500; color: var(--cream); line-height: 1.35;
+    }
+    .cadeau-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; background: var(--cream); color: var(--dark);
+      font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
+      text-decoration: none; border-radius: 8px; align-self: flex-start; transition: background .2s;
+    }
+    .cadeau-link:hover { background: #fff; }
+    .cadeau-link svg { width: 13px; height: 13px; stroke: var(--dark); }
+
+    .t-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 24px; }
+    @media(max-width: 520px) { .t-grid { grid-template-columns: 1fr; } }
+    .t-card {
+      background: #1e1c1a; border: 1px solid #262320; border-radius: 14px;
+      padding: 18px 16px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .t-header { display: flex; align-items: center; gap: 10px; }
+    .t-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #2a2724; border: 1px solid #3a3733;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: var(--accent); flex-shrink: 0;
+    }
+    .t-name { font-size: 12px; font-weight: 700; color: var(--cream); line-height: 1.2; }
+    .t-desc { font-size: 10px; color: #4a4742; }
+    .t-result { font-size: 14px; font-weight: 700; color: var(--cream); line-height: 1.3; }
+    .t-quote {
+      font-size: 12px; color: #5a5550; line-height: 1.75; font-style: italic;
+      display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -248,7 +319,7 @@
 <section class="hero hideable">
   <div class="brand">Noïra Digital</div>
   <h1>Avant de réserver ton appel,<br>dis-moi où tu en es.</h1>
-  <p>2 minutes. Pour que l'appel t'apporte vraiment quelque chose et qu'on en tire le maximum tous les deux.</p>
+  <p>2 minutes. Pour que l'appel t'apporte vraiment quelque chose.</p>
 </section>
 
 <!-- BENEFITS -->
@@ -456,6 +527,136 @@
   </div>
 </div>
 
+<!-- CONFIRMATION (apparaît après réservation Calendly) -->
+<div id="confirm-section" class="screen confirm-section">
+
+  <div class="confirm-hero">
+    <h2>Ton appel est réservé.</h2>
+    <p>Complète les 3 étapes ci-dessous avant notre échange. <strong>Toute absence non justifiée ferme définitivement l'accès aux appels.</strong></p>
+  </div>
+
+  <!-- ÉTAPE 1 -->
+  <div class="c-etape">
+    <div class="c-inner">
+      <div class="c-step-header">
+        <div class="c-circle"><span>1</span></div>
+        <div class="c-line"></div>
+        <span class="c-tag">À faire maintenant</span>
+      </div>
+      <h3>Enregistre l'appel dans ton agenda.</h3>
+      <p class="c-note">Ouvre l'e-mail de confirmation Calendly et clique sur <strong>Ajouter à l'agenda.</strong></p>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 2 -->
+  <div class="c-etape">
+    <div class="c-inner">
+      <div class="c-step-header">
+        <div class="c-circle"><span>2</span></div>
+        <div class="c-line"></div>
+        <span class="c-tag">En attendant l'appel</span>
+      </div>
+      <h3>Ton cadeau.</h3>
+      <div class="cadeau-card">
+        <span class="cadeau-tag">100 % gratuit</span>
+        <h4>Pourquoi t'es encore à zéro, alors que tu sais que c'est possible.</h4>
+        <a href="freebie-noira.html" class="cadeau-link">
+          Lire maintenant
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ÉTAPE 3 -->
+  <div class="c-etape" id="temoignages" style="border-bottom:none;">
+    <div class="c-inner">
+      <div class="c-step-header">
+        <div class="c-circle"><span>3</span></div>
+        <div class="c-line"></div>
+        <span class="c-tag">Ils sont passés à l'action</span>
+      </div>
+      <h3>Les résultats parlent d'eux-mêmes.</h3>
+      <div class="t-grid">
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">A</div>
+            <div><div class="t-name">Anaïs L. <!-- à remplacer --></div><div class="t-desc">Étudiante — partait de zéro</div></div>
+          </div>
+          <p class="t-result">De 0 à ma première vente en 3 jours.</p>
+          <p class="t-quote">Ma première vente après seulement 3 jours de lancement. Je prends un moment pour écrire ces mots parce que c'est fort. Ce n'est que le début.</p>
+        </div>
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">M</div>
+            <div><div class="t-name">Marion Drouard</div><div class="t-desc">Alternante</div></div>
+          </div>
+          <p class="t-result">4 ventes en 1 journée : 1 400 €</p>
+          <p class="t-quote">J'ai fait en une seule journée un x2 sur mon salaire d'alternante. Tout est possible, ne lâchez rien vraiment.</p>
+        </div>
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">S</div>
+            <div><div class="t-name">Sarah M. <!-- à remplacer --></div><div class="t-desc">Étudiante à côté des cours</div></div>
+          </div>
+          <p class="t-result">+875 € en une seule journée.</p>
+          <p class="t-quote">En une seule journée j'ai généré bien plus que ce que je gagnais en 1 mois à côté de mes études. Ce business change des vies.</p>
+        </div>
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">C</div>
+            <div><div class="t-name">Céline R. <!-- à remplacer --></div><div class="t-desc">Était à découvert chaque mois</div></div>
+          </div>
+          <p class="t-result">3 000 € en 1 semaine.</p>
+          <p class="t-quote">Il y a 1 an j'étais à découvert de 1 300 € chaque mois. La semaine dernière j'ai pu faire mes premières vacances sur un coup de tête.</p>
+        </div>
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">L</div>
+            <div><div class="t-name">Laura B. <!-- à remplacer --></div><div class="t-desc">Première vente en décembre</div></div>
+          </div>
+          <p class="t-result">10 000 € en 3 mois.</p>
+          <p class="t-quote">J'ai atteint un objectif que je n'aurais JAMAIS imaginé il y a encore quelques mois. J'ai gagné l'équivalent d'un smic cette semaine en travaillant chez moi.</p>
+        </div>
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">N</div>
+            <div><div class="t-name">Nadia K. <!-- à remplacer --></div><div class="t-desc">Maman — depuis la Guyane</div></div>
+          </div>
+          <p class="t-result">1 050 € en 11 jours.</p>
+          <p class="t-quote">Je viens de faire ma troisième vente en 11 jours. Je développe cette activité depuis la Guyane française avec ma fille.</p>
+        </div>
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">J</div>
+            <div><div class="t-name">Julie M. <!-- à remplacer --></div><div class="t-desc">Zéro compétence en marketing digital</div></div>
+          </div>
+          <p class="t-result">+27 000 € en 5 mois.</p>
+          <p class="t-quote">Il y a 5 mois je me lançais sans rien connaître au marketing digital. Je repartais de zéro, avec une seule chose : l'envie de m'en sortir.</p>
+        </div>
+
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-avatar">T</div>
+            <div><div class="t-name">Thomas D. <!-- à remplacer --></div><div class="t-desc">Voulait juste faire une vente</div></div>
+          </div>
+          <p class="t-result">+70 000 € en 10 mois.</p>
+          <p class="t-quote">Au début, mon but était simplement de faire une vente et rembourser mon investissement. Aujourd'hui je dépasse les 70K alors qu'au départ j'avais beaucoup de doutes.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <footer>Noïra Digital</footer>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -542,6 +743,15 @@
   });
 
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwcaOqXdI80mN3s3xTwOkgSxUP6vEoCXPWPLUTzd0OgSaYunCzw41D9c-Ha2AEvWrQ-/exec';
+
+  // Détecte la réservation Calendly → affiche la confirmation
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.event === 'calendly.event_scheduled') {
+      document.getElementById('cal-section').classList.remove('active');
+      document.getElementById('confirm-section').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
 
 </script>
 </body>
