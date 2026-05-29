@@ -461,15 +461,8 @@
       </div>
 
       <div class="field" id="f-video">
-        <label>Quelle vidéo t'a poussé(e) à passer à l'action ? *</label>
+        <label>Quelle vidéo t'a poussée à me contacter ? <span>(optionnel)</span></label>
         <input type="text" name="video" placeholder="Ex : le reel sur le conditionnement..." />
-        <div class="err">Ce champ est requis.</div>
-      </div>
-
-      <div class="field" id="f-pourquoi">
-        <label>Pourquoi maintenant et pas dans 6 mois ? *</label>
-        <textarea name="pourquoi" placeholder="Ex : j'en peux plus de dépendre de mes parents, de mon patron..."></textarea>
-        <div class="err">Ce champ est requis.</div>
       </div>
 
       <!-- STEP 3 -->
@@ -689,8 +682,6 @@
       req('f-objectif',  'input'),
       req('f-blocage',   'textarea'),
       req('f-essaye',    'textarea'),
-      req('f-video',     'input'),
-      req('f-pourquoi',  'textarea'),
     ];
 
     const engVal = document.querySelector('input[name=engagement]:checked');
@@ -712,7 +703,6 @@
       blocage:    document.querySelector('[name=blocage]').value.trim(),
       essaye:     document.querySelector('[name=essaye]').value.trim(),
       video:      document.querySelector('[name=video]').value.trim(),
-      pourquoi:   document.querySelector('[name=pourquoi]').value.trim(),
       engagement: engVal.value,
       date:       new Date().toLocaleString('fr-FR'),
     };
